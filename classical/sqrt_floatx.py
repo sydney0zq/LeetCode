@@ -8,9 +8,17 @@ import math
 precision = 0.0000004
 
 def sqrtx_dich(x):
-    assert x >= 1
+    # assert x >= 1
+    # But in this algorithm, x must be bigger than 1
+    # because when x < 1, sqrt(x) is not between 0 and x, but sqrt(x) > x instead
+    # therefore we reset the maxy to correct the borders
     miny = 0
-    maxy = x
+    if x >= 1:
+        maxy = x
+    elif x >= 0 and x < 1:
+        maxy = 1
+    else:
+        raise ValueError
     mid = x/2.0
 
     # formulation: when x-p< mid*mid < x+p, exit
@@ -21,8 +29,6 @@ def sqrtx_dich(x):
     # ------------------------- y - precision
     # 
     # ------------------------- miny
-    # But in this algorithm, x must be bigger than 1
-    # because when x < 1, sqrt(x) is not between 0 and x but sqrt(x) > x instead
     while mid*mid > x+precision or mid*mid < x-precision:
         mid = (miny+maxy)/2.0
         if mid*mid > x+precision:
@@ -48,7 +54,7 @@ def sqrtx_dich(x):
 
 
 
-print (sqrtx_dich(5))
+print (sqrtx_dich(0))
 
 print (math.sqrt(5.0))
 

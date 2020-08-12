@@ -25,11 +25,14 @@ def find_max_xor2(l):
     # l = list(set(l))              # Uncomment when duplicated elements exist
 
     # Find highest bit == 1 index
-    max_val = max(l)
-    max_ind = l.index(max_val)
     l_bs = [int2binstr(x) for x in l]
-    for i, c in enumerate(l_bs[max_ind]):
-        if c == "1":
+    first1_ind = 0
+    for i in range(0, 32):
+        first1_sum = 0
+        for x in l_bs:
+            if x[i] == "1":
+                first1_sum += 1
+        if first1_sum > 0 and first1_sum != len(l_bs):
             first1_ind = i
             break
 
@@ -66,7 +69,10 @@ def find_max_xor2(l):
 
 test1 = [*range(100, 5000)] + [100000]      # Test bit moving best condition
 # test1 = [*range(100, 10000)]                # Test the worst/sequence case
+# test1 = [4, 5, 6, 7]                          # b 100, 101, 110, 111
+# test1 = [*range(8, 16)]                       # b 1000~1111
 # test1 = [2, 5, 6, 8]                        # Simple Test
+
 
 import time
 s1 = time.time()

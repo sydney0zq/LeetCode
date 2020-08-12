@@ -14,7 +14,7 @@ def find_max_xor(l):
 
 ##################################################################
 
-# Bit compareness version 1
+# Bitwise comparing version 1
 
 # Support 32 bit now, acutally it can be replaced by bit moving
 # Here we keep it for readability
@@ -59,8 +59,8 @@ def find_max_xor2(l):
         else:
             continue
     print ("xor pairs ", len(xor_pairs))
-    # This step can be optimized by comparing which pairs has higher different bit value
-    # when the len(l) bigger than 10^6 etc, it has performance impact 
+    # This step can be optimized by comparing which pairs have higher different bit value
+    # when len(l) is bigger than 10^6 etc, it has performance impact 
     val = max([int(x, 2)^int(y, 2) for x, y in xor_pairs])
     return val
         

@@ -65,7 +65,15 @@ def find_max_xor2(l):
     return val
         
 
-### Test case, the naive version has exact the same output with the bit moving version
+##################################################################
+
+# BitWise Prefix Tree
+# https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array/solution/shu-zu-zhong-liang-ge-shu-de-zui-da-yi-huo-zhi-by-/
+
+# Time: O(N)
+
+
+### Test case, the naive version has exactly the same output with the bit moving version
 
 test1 = [*range(100, 5000)] + [100000]      # Test bit moving best condition
 # test1 = [*range(100, 10000)]                # Test the worst/sequence case

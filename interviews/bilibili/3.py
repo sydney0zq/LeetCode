@@ -23,6 +23,7 @@
 #           m[i, w] = max{m[i-1, w], vi+m[i-1, w-wi]}
 
 
+# 仅供参考
 import numpy as np
 
 n = 4

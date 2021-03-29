@@ -54,7 +54,7 @@ if __name__ == "__main__":
         # 读取每一行
         line = sys.stdin.readline().strip()
         inputs.append(line)
-    print (is_same_form(*inputs))
+    print (int(is_same_form(*inputs)))
     #print (inputs)
 
 
